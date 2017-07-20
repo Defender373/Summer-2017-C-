@@ -39,3 +39,20 @@ int main() {
 	insert(root, 10);
 	insert(root, 20);
 }
+
+//Double linked list
+
+struct box {
+	int value;
+	box *prev;
+	box *next;
+
+};
+
+
+//Making a double list
+//Method 1
+
+int main() {
+	std::list<double> holder;
+}
