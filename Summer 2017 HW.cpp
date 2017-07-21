@@ -41,13 +41,45 @@ int main() {
 }
 
 //Double linked list
+int main(int argc, char** argv) {
+	struct box {
+		int data;
+		box *prev;
+		box *next;
 
-struct box {
-	int value;
-	box *prev;
-	box *next;
+	};
 
-};
+	box* head;
+	box* tail;
+	box* n;
+
+	//First node
+	n = new node;
+	n->data = 1;
+	n->prev = NULL;
+	head = n;
+	tail = n;
+
+	//Second node
+	n = new node;
+	n->data = 2;
+	n->prev = tail;
+	tail->next = n;
+	tail->n;
+
+	//Third node
+	n = new node;
+	n->data = 3;
+	n->prev = tail;
+	tail->next = n;
+	tail->n;
+	
+	//Last node needs to have Tail set to Null
+	tail->next = NULL;
+
+
+	return 0;
+}
 
 
 //Making a double list
