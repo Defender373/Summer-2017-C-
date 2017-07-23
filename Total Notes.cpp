@@ -96,14 +96,14 @@ int main() {
 struct Node {
 	Node* next = NULL;
 	int data;
-}
+};
 
 
 struct DNode() extends Node{
 	DNode* prev;
 	DNode* next;
 	int data;
-}
+};
 DNode root = new DNode()
 root = 0;
 root->next = new DNode();
