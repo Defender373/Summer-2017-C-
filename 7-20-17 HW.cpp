@@ -3,7 +3,7 @@ struct Node {
 	int data;
 };
 
-struct BNode() extends Node {
+struct BNode{
 	BNode* left = NULL;
 	BNode* right = NULL;
 	int data = 0;
@@ -67,3 +67,6 @@ BNode* pushfront(Node& input, BNode* root) {
 		}
 	}
 }
+
+//BST is ordered
+//BT is unordered
