@@ -162,18 +162,37 @@ int main() {
 
 	preOrder(b_root);
 
-    Queue origin;
+//    Queue originT;
 //    Node *test = new Node();
 //    test->data = 1;
 //
-//    origin.push(test);
+//    originT.push(test);
 //
 //    Node *second = new Node();
 //    second->data = 2;
 //
-//    origin.push(second);
+//    originT.push(second);
+
+
+    Queue origin;
 
     addToQueue(b_root, origin);
+/*
+    void addToQueue(BNode* root, Queue &origin){
+        if (root == NULL){
+            return;
+        }
+        else{
+            int temp = root->data;
+            Node *place = new Node();
+            place->data = temp;
+            origin.push(place);
+
+            addToQueue(root->left, origin);
+            addToQueue(root->right, origin);
+        }
+    }
+*/
 
 
 
