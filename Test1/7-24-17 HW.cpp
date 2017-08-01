@@ -19,6 +19,7 @@ struct BNode {
 struct Node{
     Node* next = NULL;
     int data;
+    BNode* point = NULL;
 };
 
 struct Queue{
@@ -27,6 +28,8 @@ struct Queue{
 
     void push(Node* data);
     int pop();
+
+    void pointPush(BNode* data);
 };
 
 void Queue::push(Node* data){
@@ -41,9 +44,21 @@ void Queue::push(Node* data){
         tail = data;
     }
 
-
-
 }
+
+void Queue::pointPush(BNode* pointer){
+    if (head == NULL && tail == NULL){
+         point = pointer;
+    }
+}
+
+// Having trouble adding a BNode pointer to the queue
+//void Queue::add(BNode* data){
+//    if (head == NULL && tail == NULL){
+//        head = data;
+//    }
+//}
+
 
 int Queue::pop(){
     int answer = 0;
@@ -73,6 +88,8 @@ void preOrder(BNode* root) {
 	}
     //How does this function know when to stop?
 }
+
+
 
 void addToQueue(BNode* root, Queue &origin){
     if (root == NULL){
@@ -131,7 +148,23 @@ int main() {
 //	root->next->data = 10;
 //	root->next->next = new DNode();
 
+    BNode *b_root = new BNode();
+    b_root->data = 1;
 
+    b_root->left = new BNode();
+    b_root->left->data = 2;
+
+    b_root->right = new BNode();
+
+
+
+    Queue origin;
+
+
+
+
+
+/*
 	BNode *b_root = new BNode();
 	b_root->data = 5;
 	//b_root->left = NULL;
@@ -161,6 +194,8 @@ int main() {
 
 
 	preOrder(b_root);
+*/
+
 
 //    Queue originT;
 //    Node *test = new Node();
@@ -174,9 +209,9 @@ int main() {
 //    originT.push(second);
 
 
-    Queue origin;
+    //Queue origin;
 
-    addToQueue(b_root, origin);
+    //addToQueue(b_root, origin);
 /*
     void addToQueue(BNode* root, Queue &origin){
         if (root == NULL){
@@ -202,12 +237,12 @@ int main() {
 
 
     //pushback function test below
-    BNode* push_root = new BNode();
-    push_root->data = 15;
+//    BNode* push_root = new BNode();
+//    push_root->data = 15;
 
 
 //  void pushBack(BNode* root, BNode* enter, Queue &origin)
-    pushBack(b_root, push_root, origin);
+//    pushBack(b_root, push_root, origin);
 
 	return 0;
 }
