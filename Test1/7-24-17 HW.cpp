@@ -19,7 +19,8 @@ struct BNode {
 struct Node{
     Node* next = NULL;
     int data;
-    BNode* point = NULL;
+    Node* holder = NULL;
+   // BNode* point = NULL;
 };
 
 struct Queue{
@@ -30,6 +31,7 @@ struct Queue{
     int pop();
 
     void pointPush(BNode* data);
+
 };
 
 void Queue::push(Node* data){
@@ -46,11 +48,11 @@ void Queue::push(Node* data){
 
 }
 
-void Queue::pointPush(BNode* pointer){
-    if (head == NULL && tail == NULL){
-         point = pointer;
-    }
-}
+//void Queue::pointPush(BNode* pointer){
+//    if (head == NULL && tail == NULL){
+//        holder = pointer;
+//    }
+//}
 
 // Having trouble adding a BNode pointer to the queue
 //void Queue::add(BNode* data){
@@ -138,6 +140,57 @@ void pushBack(BNode* root, BNode* enter, Queue &origin){
     }
 
 }
+
+//Functions for 8/4/17
+
+void addToVisited(BNode* add, Queue visitedPointers ){
+
+    visitedPointers.push(add);
+}
+
+
+void fillQueue(BNode* root, Queue pointers) {
+
+    if (root == NULL) {
+        return;
+    }
+    else {
+
+
+        if (root->data != NULL){
+            pointers.add(root);
+        }
+
+        if (root->data == NULL){
+            addToVisited(root, pointers);
+        }
+
+        preOrder(root->left);
+        preOrder(root->right);
+    }
+
+
+
+
+
+}
+
+
+bool checkInVisited(BNode* check, Queue visited){
+
+Node* temp = visited.begin();
+
+    while (temp != NULL){
+        if (temp == check){
+            return true;
+        }
+        temp->next;
+    }
+
+    return false;
+
+}
+
 
 int main() {
 
